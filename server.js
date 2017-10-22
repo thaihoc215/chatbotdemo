@@ -56,7 +56,26 @@ app.get('/webhook', function(req, res) {
 
 });
 
+// Xử lý khi có người nhắn tin cho bot
+app.post('/webhook', function(req, res) {
+  var entries = req.body.entry;
+  for (var entry of entries) {
+    var messaging = entry.messaging;
+    for (var message of messaging) {
+      // var senderId = message.sender.id;
+      if (message.message) {
+        // If user send text
+        if (message.message.text) {
+          var text = message.message.text;
+          console.log(text); // In tin nhắn người dùng
+          // sendMessage(senderId, "Tui là bot đây: " + text);
+        }
+      }
+    }
+  }
 
+  res.status(200).send("OK");
+});
 
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
 
