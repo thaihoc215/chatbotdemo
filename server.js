@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 
 app.get('/webhook', function(req, res) {
 
-  if (req.query['hub.verify_token'] === 'EAAEyhAuAnlIBAA7ZC2FTdWiS0TnqD9GxCb9ZBpBepuxe7I8oZB4v9FfdvA5QmHUG3PonUBLbDp59YxIBnSBHZBoVpT9AZA1gBVlm6GtyZBqalmPPvvnHb0f25ZCZAuqDO9HBhmSEmdwnIHvDFbrHSHWLBeMi1ZC79GZCaIZCeZAOimSu0c6tKfAU0WBq') {
+  if (req.query['hub.verify_token'] === 'thaihoc1994') {
 
     res.send(req.query['hub.challenge']);
 
